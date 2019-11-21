@@ -1,0 +1,175 @@
+int main()
+{
+    char a[] = "1234";
+    int c, t, sum;
+    sum = c = 0;
+    while (a[c]!='\0'){
+        t=a[c]-'0';
+        sum+=t;
+        c++;
+    }
+    printf("Sum of digits of: %d", sum);
+
+  return 0;
+}
+
+//dec to b
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n = 12345;
+    for (int c = 31; c>=0; c--){
+        int temp=n>>c;
+
+        if (temp & 1)
+            printf("1");
+        else
+            printf("0");
+
+    }
+    return 0;
+}
+
+
+//b to dec
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int bin = 10000;
+    int weight = 1;
+    int sum = 0;
+
+    while(bin!=0){
+        int rem = bin%10;
+        sum+=rem*weight;
+        weight*=2;
+        bin/=10;
+    }
+
+    printf("Binary: %d \n Decimal: %d", bin, sum);
+
+    return 0;
+}
+--------------
+8%2 = 0 -> 1
+4%2 = 0 ->10
+2%2 = 0 ->100
+1%2 = 1 ->1000
+--------------
+8(10) = 1000(2)
+long long convertDecimalToBinary(int n)
+{
+    long long binaryNumber = 0;
+    int remainder, i = 1, step = 1;
+    while (n!=0)
+    {
+        remainder = n%2;
+        printf("Step %d: %d/2, Remainder = %d, Quotient = %d\n", step++, n, remainder, n/2);
+        n /= 2;
+        binaryNumber += remainder*i;
+        i *= 10;
+    }
+    return binaryNumber;
+}
+
+long reverse(long n) {
+   static long r = 0;
+   
+   if (n == 0)
+      return 0;
+   
+   r = r * 10;
+   r = r + n % 10;
+   reverse(n/10);
+   return r;
+}
+
+#include <stdio.h>
+
+int main()
+{
+    int row, c, n, s;
+    n = s = 5;
+
+    for (row = 1; row<=n; row++)
+    {
+        for (c = 1; c<s; c++)
+        printf(" ");
+        s--;
+
+        for (c = 1; c<=row*2-1; c++)
+            printf("*");
+        printf("\n");
+
+
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+ 
+int main()
+{
+  int n, first = 0, second = 1, next, c;
+ 
+  printf("Enter the number of terms\n");
+  scanf("%d", &n);
+ 
+  printf("First %d terms of Fibonacci series are:\n", n);
+ 
+  for (c = 0; c < n; c++)
+  {
+    if (c <= 1)
+      next = c;
+    else
+    {
+      next = first + second;
+      first = second;
+      second = next;
+    }
+    printf("%d\n", next);
+  }
+ 
+  return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int a = 0;
+    int b = 1;
+    int result = 0;
+    int n = 0;
+    printf("Enter number of terms \n");
+    scanf("%d", &n);
+    for (int i=1; i<=n; i++){
+        printf("%d ", a);
+        result = a+b;
+        a=b;
+        b = result;
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main()
+{
+    int rows = 10;
+    int n = 1;
+    for (int i = 1; i<rows; i++){
+        for (int j = 1; j<i; j++){
+           printf("%d ", n);
+           n++;
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

@@ -1,0 +1,158 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+    int tuna  = 19;
+    int *pTuna = &tuna;
+    
+    
+    printf("Address:\tName\tValue \n");
+    printf("%p\t%s\t%d \n", &tuna, "tuna", tuna);
+    printf("%p\t%s\t%d \n", pTuna, "tuna", tuna);
+    printf("%p\t%s\t%p \n", &pTuna, "pTuna", pTuna);
+    
+    printf("\n*pTuna: %d \n", *pTuna);
+    
+    *pTuna = 71;
+    
+    printf("\n*pTuna: %d \n", *pTuna);
+    printf("\n*tuna: %d \n", tuna);  
+    
+    
+    return 0;
+}
+
+
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+    char movie1[] = "The return of Buckyman!";
+    char *movie2 = "Bucky is awesome I love ham!";
+    
+    puts(movie2);
+    
+    movie2 = "New movie title";
+    puts(movie2);
+    
+    
+    
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char movie[20];
+    char *pMovie = movie;
+    
+//instead of entering a name symbol by symbol get the starting memory location and put the string in there    
+    fgets(pMovie, 20, stdin);
+    puts(pMovie);
+
+
+
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int *points;
+   int number = 9;
+   points = &number;
+   
+   scanf("%d", points);
+   printf("%p\t%d\t%d", points,*points, number);
+  // points = (int *) malloc(5*sizeof(int));
+   //free(points);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i, howMany;
+    int total;
+    float average = 0;
+    int *pointsArray;
+    
+    printf("How many numbers you want to average \n");
+    scanf(" %d", &howMany);
+    
+    
+    pointsArray = (int *) malloc(howMany * sizeof(int));
+    printf("Enter the numbers \n");
+    
+    for (i = 0; i<howMany; i++){
+        scanf(" %d", &pointsArray[i]);
+        total+=pointsArray[i];
+    }
+    
+    
+    
+    average = total / howMany;
+    printf("Average is %f", average);
+    
+    
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int c = 10;
+    int arr[5];
+    int *ptr = arr;
+
+    
+    //from where pointer is: memory location of the first element of the array
+	//to the memory address of the end of the array
+	//move pointer at every step
+	//dereference->put the value;
+    for (;ptr<&arr[5]; ptr++){
+        *ptr = c;
+        c*=2;
+    }
+    for (int i = 0; i<5; i++){
+        printf("%d ", arr[i]);
+    }
+
+
+    return 0;
+}
