@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main()
+{
+    int first, last, middle;
+    int arr[] = {3,4,5,6,7,8,9,10};
+    int n = 8;
+    int search = 19;
+
+    first = 0;
+    last = n-1;
+    middle = (first + last)/2;
+
+    while (first<=last)
+    {
+        if (arr[middle]==search)
+        {
+            printf("Element %d is found", search);
+            break;
+        }
+        else if (arr[middle]>search)
+        {
+            last= middle-1;
+        }
+        else
+        {
+            first = middle + 1;
+        }
+
+        middle = (first+last)/2;
+
+        if (first > last)
+        {
+            printf("Element %d not found in the list", search);
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+    return 0;
+}
+

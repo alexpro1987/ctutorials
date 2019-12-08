@@ -1,0 +1,53 @@
+#include<stdio.h>
+
+typedef struct Node
+{
+    int id;
+    int salary;
+
+} Node;
+
+typedef struct LinkedList
+{
+    Node data;
+    Node *next;
+} ilist;
+
+void push(Node **headred, int newdata)
+{
+    Node* newNode = (Node *) malloc(sizeof(Node));
+    newNode->id = newdata;
+    //Node->
+}
+
+
+
+int main() {
+
+    Node emp1;
+    Node *e1 = (Node*) malloc(sizeof(Node));
+    e1->id = 34;
+    e1->salary = 6767;
+    ilist *node1;
+    int* nmbr = (int *)malloc(sizeof(int));
+    int a  = 70;
+    nmbr = &a;
+    printf("%d", sizeof(nmbr));
+    char *charpoint = (char*)nmbr;
+
+    printf("%p \t%d", nmbr, a);
+    printf("\n%p \t%d", charpoint, *charpoint);
+    printf("\n%p \t%d", charpoint+1, *(charpoint+1));
+
+    void *p3 = nmbr;
+    printf("\n%p \t%d", p3, p3+1);
+
+    int **q = &nmbr;
+    printf("\n%p \t%d", q, **q);
+
+
+
+
+
+    return 0;
+}
