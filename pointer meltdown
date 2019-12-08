@@ -21,9 +21,21 @@ void push(Node **headred, int newdata)
 }
 
 
-
+ void dub(int* A,int sized)
+ {
+     for (int i = 0; i<sized; i++)
+        A[i] = 2* A[i];
+ }
 int main() {
 
+    int b[] = {20, 40, 60, 80};
+    int bsize = sizeof(b)/sizeof(b[0]);
+    dub(b, bsize);
+    for (int i = 0; i<bsize; i++)
+    {
+        printf("\nResult: %d\n",b[i]);
+
+    }
     Node emp1;
     Node *e1 = (Node*) malloc(sizeof(Node));
     e1->id = 34;
@@ -35,7 +47,7 @@ int main() {
     printf("%d", sizeof(nmbr));
     char *charpoint = (char*)nmbr;
 
-    printf("%p \t%d", nmbr, a);
+    printf("\n%p \t%d", nmbr, a);
     printf("\n%p \t%d", charpoint, *charpoint);
     printf("\n%p \t%d", charpoint+1, *(charpoint+1));
 
@@ -43,11 +55,49 @@ int main() {
     printf("\n%p \t%d", p3, p3+1);
 
     int **q = &nmbr;
-    printf("\n%p \t%d", q, **q);
+    printf("\n%p \t%d\n", q, **q);
 
+    int arr[3] = {10,20,30};
+    for (int i = 0; i<3; i++)
+    {
+        printf("Element: %d\t%p\t%d\n",i, arr+i, *(arr+i));
+
+    }
 
 
 
 
     return 0;
 }
+
+#include <stdio.h>
+#include <string.h>
+void display(char* c)
+{
+    int i = 0;
+    while(*c!='\0'){
+        printf("%c", *c);
+        c++;
+    }
+    printf("\n");
+}
+
+
+int main()
+{
+    char c[4];
+    c[0] = 'J';
+    c[1] = 'o';
+    c[2] = 'e';
+    c[3] = '\0';
+    int len = strlen(c);
+    display(c);
+    char* c2 = c;
+
+    printf("%d %p, %p, %c, %c",sizeof(c2), c, c2, c[1], c2[1]);
+
+    return 0;
+}
+
+
+
